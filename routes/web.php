@@ -16,6 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard.index');
 });
-Route::get('/Kosemak', function () {
-    return view('dashboard.index');
-});
