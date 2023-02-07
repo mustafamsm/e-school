@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang = "ar" dir="rtl"    >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="Description" content="Welcome To Our Template" />
+        <meta name="Viewport" content="width=device-width, initial-scale = 1.0" />
+        <title>المكتبة | سجل الدخول الى لوحة التحكم</title>
+        <style>
+            body{
+                background: #333;
+                color: #ddd;
+                padding: 20px;
+                overflow-x: hidden;    
+            }
+            .log-in{
+                margin: 20px auto;
+                display: block;
+                width: 100%;
+            }
+            .log-in form{
+                margin: auto;
+                max-width: 90%;
+                text-align: center;
+                width: 90%;
+            }
+            .log-in form .logo{
+                width: 90%;
+                padding: 10px;
+                margin: auto;
+            }
+            .log-in form .logo img{
+                width: 50%;
+                margin: 10px auto;
+            }
+            .log-in form input{
+                padding: 10px;
+                width: 50%;
+                font: 18px Almarai;
+                margin:20px auto;
+                background: #1b1a1a;
+                border: 0;
+                outline: 0;
+                border-radius: 5px;
+                color: #fff;
+                display: block;
+            }
+            .log-in form input[type = submit]{
+                background: #6ea52a;
+                cursor: pointer;    
+            }
+            .log-in form p{
+                font: 15px Almarai;
+                color: #ddd
+            }
+            @media all and (max-width: 700px){
+                .log-in form .logo img{
+                    width: 70%;
+                    margin: 10px auto;
+                }
+                .log-in form input{
+                    padding: 10px;
+                    width: 70%;
+                    font: 18px cairo;
+                    margin:20px auto;
+                    background: #1b1a1a;
+                    border: 0;
+                    outline: 0;
+                    border-radius: 5px;
+                    color: #fff;
+                    display: block;
+                }
+            }
+            @media all and (max-width: 400px){
+                .log-in form .logo img{
+                    width: 100%;
+                    margin: 10px auto;
+                }
+                .log-in form input{
+                    padding: 10px;
+                    width: 100%;
+                    font: 18px cairo;
+                    margin:20px auto;
+                    background: #1b1a1a;
+                    border: 0;
+                    outline: 0;
+                    border-radius: 5px;
+                    color: #fff;
+                }
+            }
+            .log-in form a,footer p a{
+                color: #6ea52a;
+                font: 18px Almarai;
+                text-align: right;
+                text-decoration: none;
+            }
+            footer p{
+                font: 18px almarai;
+                text-align: center;
+
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="log-in">
+            <form method="post" action="Admin/dashbord.html">
+                <div class="logo">
+                    <img src="maktaba-logo.png">
+                </div>
+                <p> مرحبا بك ايها  المسؤول هذا فضاءك الخاص </p>
+                <input type="text" placeholder = "اسم المستخدم" required />
+                <input type="paasword" placeholder = "كلمة المرور" required />
+                <a href = "forget-pass.html">هل نسيت كلمة المرور</a>
+                <input type="submit" value = "دخول"/>
+            </form>
+        </div>
+        <footer>
+            <p>جميع الحقوق محفوظة &copy; <a href="../Index.html"> المكتبة </a></p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,286 @@
+/* Start global */
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background: none;
+		padding: 0px;
+		overflow-x: hidden;
+        font-family: cairo;
+    }
+    a{
+        text-decoration: none;
+    }
+    button{
+        cursor: pointer;
+        border:0;
+        outline: 0;
+        transition: .3s all;
+        padding: 10px;
+        text-align: center;
+    }
+    span{
+	display:block;
+	text-justify:center;
+	justify-content:center;
+	}
+    .clear{
+    clear: both;
+    }
+	a:hover{
+	text-decoration: none;
+}
+    .navbar{
+        border-radius: 0
+    }
+/* Start Header */
+header{
+    padding-bottom: 5px;
+}
+header .dashbord-nav{
+    background:  #333;
+    padding: 20px;
+    padding-bottom: 40px;
+    z-index: 1000
+}
+header .dashbord-nav .home {
+    border-bottom: 2px solid dodgerblue;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin: auto;
+    text-align: center
+}
+header .dashbord-nav .home a {
+    font: 25px cairo;
+    color: dodgerblue;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 7px solid dodgerblue;
+    transition: .5s all;
+    width: 100%;
+    margin: auto;
+    padding: 20px 20px 10px 20px
+    
+}
+header .dashbord-nav .cours{
+    padding: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ff004a;
+}
+header .dashbord-nav .cours h2{
+    color: #fff;
+    font-size: 25px;
+}
+header .dashbord-nav .cours button{
+    color: #fff;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    margin: 10px
+}
+header .dashbord-nav .cours  ul{
+    background: #fff;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px;
+    border-bottom: 7px solid #eee
+}
+header .dashbord-nav .cours  ul li{
+    list-style: none;
+    margin: 20px 20px 20px 20px;
+    text-align: right;
+}
+header .dashbord-nav .cours ul li a{
+    color: #333;
+    border-bottom: 1px solid dodgerblue;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    transition: .5s all
+}
+header .dashbord-nav .cours ul li a:hover{
+    color: #fff;
+    background:  dodgerblue;
+}
+header .dashbord-nav .cours .i3dadi #i3dadiHide{
+    display: none
+}
+header .dashbord-nav .cours .i3dadi #i3dadiContent{
+    width: 100%;
+    margin: auto;
+    display: none;
+}
+header .dashbord-nav .cours .tanawi #tanawiHide{
+    display: none
+}
+header .dashbord-nav .cours .tanawi #tanawiContent{
+    width: 100%;
+    margin: auto;
+    display: none;
+}
+header .dashbord-nav {
+    padding: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ff6700;
+}
+header .dashbord-nav  h2{
+    color: #fff;
+    font-size: 25px;
+}
+header .dashbord-nav  button{
+    color: #fff;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    margin: 10px
+}
+header .dashbord-nav   ul{
+    background: #fff;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px;
+    border-bottom: 7px solid #ff004a
+}
+header .dashbord-nav   ul li{
+    list-style: none;
+    margin: 20px 20px 20px 20px;
+    text-align: right;
+}
+header .dashbord-nav  ul li a{
+    color: #333;
+    border-bottom: 1px solid #ff004a;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    transition: .5s all
+}
+header .dashbord-nav  ul li a:hover{
+    color: #fff;
+    background:  #ff004a;
+}
+header .dashbord-nav  .i3dadi #i3dadiContainer{
+    width: 100%;
+    margin: auto;
+    display: none;
+}
+header .dashbord-nav  .i3dadi #i3dadiNone{
+    display: none
+}
+header .dashbord-nav  .tanawi #tanawiContainer{
+    width: 100%;
+    margin: auto;
+    display: none;
+}
+header .dashbord-nav  .tanawi #tanawiNone{
+    display: none
+}
+header .dashbord-nav .ads h2{
+    color: #fff;
+    font-size: 25px;
+}
+header .dashbord-nav .ads .add-ads{
+    background: #fff;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px;
+    border-bottom: 7px solid #ff6700
+}
+header .dashbord-nav .ads .add-ads a{
+    border-bottom: 1px solid #ff6700;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    transition: .5s all;
+    color: #333
+}
+header .dashbord-nav .ads .add-ads a:hover, header .dashbord-nav .ads .add-ads a:focus{
+    color: #fff;
+    background: #ff6700
+}
+header .dashbord-nav .other-setting h2{
+    color: #fff;
+    font-size: 25px;
+}
+header .dashbord-nav .other-setting .links{
+    background: #fff;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px;
+    border-bottom: 7px solid #7208eb
+}
+header .dashbord-nav .other-setting .links a{
+    border-bottom: 1px solid #7208eb;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    transition: .5s all;
+    color: #333
+}
+header .dashbord-nav .other-setting .links a:hover, header .dashbord-nav .other-setting .links a:focus{
+    color: #fff;
+    background: #7208eb
+}
+header .disconect button{
+    background: dodgerblue;
+    color: #fff
+}
+header  .dashbord .big-text{
+    padding: 0 60px;
+}
+header  .dashbord .no-ads{
+    background: #eee;
+    margin: 50px auto;
+    padding: 50px;
+    display: none
+}
+header  .dashbord .no-ads i{
+    font-size: 100px;
+    display: block;
+    color: #888
+}
+header  .dashbord .no-ads b{
+    font: 50px cairo;
+    color: #888
+}
+header  .dashbord .menu-ads{
+    margin: 40px auto 0;
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header  .dashbord .menu-ads button{
+    position: absolute;
+    top: 75px;
+    right: 20px;
+}
+header  .dashbord .menu-ads h3{
+    position: absolute;
+    top: 6px;
+    right: 28px;
+    font-weight: 900;
+    text-shadow: 0 6px 14px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(0, 0, 0, 0.1), 0 4px 4px  rgba(0, 0, 0, 0.1);
+    color: #212629;
+
+}
+header  .dashbord .menu-ads img{
+    width: 100%;
+}
+footer{
+    background: #fff
+}
+@media (max-width: 980px){
+
+}
+   
+@media (min-width: 768px){
+    header .dashbord{
+        padding: 0 40px;
+    }
+}

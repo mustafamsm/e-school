@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang = "ar" dir="rtl"    >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="Description" content="Welcome To Our Template" />
+        <meta name="Viewport" content="width=device-width, initial-scale = 1.0" />
+        <title>المكتبة | استرجع كلمة المرور</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background: #333;
+                color: #ddd;
+                padding: 20px;
+                overflow-x: hidden;    
+            }
+            .log-in{
+                margin: 20px auto;
+                display: block;
+                width: 100%;
+            }
+            .log-in form{
+                margin: auto;
+                max-width: 90%;
+                text-align: center;
+                width: 90%;
+            }
+            .log-in form .logo{
+                width: 90%;
+                padding: 10px;
+                margin: auto;
+            }
+            .log-in form .logo img{
+                width: 50%;
+                margin: 10px auto;
+            }
+            .log-in form input{
+                padding: 10px;
+                width: 50%;
+                font: 18px Almarai;
+                margin:20px auto;
+                background: #1b1a1a;
+                border: 0;
+                outline: 0;
+                border-radius: 5px;
+                color: #fff;
+                display: block;
+            }
+            .log-in form input[type = submit]{
+                background: #6ea52a;
+                cursor: pointer;    
+            }
+            .log-in form p{
+                font: 15px Almarai;
+                color: #ddd
+            }
+            footer p a{
+                color: #6ea52a;
+                font: 18px Almarai;
+                text-align: right;
+                text-decoration: none;
+            }
+            footer p{
+                font: 18px almarai;
+                text-align: center;
+
+            }
+            .send-pass{
+                width: 300px;
+                color: #ddd;
+                font: 16px almarai;
+                padding: 15px;
+                background: #222;
+                text-align: center;
+                border-radius: 5px;
+                display: none;    
+            }
+            .send-pass i{
+                display: block;
+                text-align: center;
+                margin: 5px auto;
+                color: #ddd;
+                background: #6ea52a;
+                padding: 5px;
+                border-radius: 100%;
+                width: 16px;
+                height: 16px;
+            }
+            .send-pass span{
+                color: #6ea52a;
+            }
+            .send-pass a{
+                background: #6ea52a;
+                color: #ddd;
+                padding: 10px;
+                margin: 10px auto;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            @media all and (max-width: 700px){
+                .log-in form .logo img{
+                    width: 70%;
+                    margin: 10px auto;
+                }
+                .log-in form input{
+                    padding: 10px;
+                    width: 70%;
+                    font: 18px cairo;
+                    margin:20px auto;
+                    background: #1b1a1a;
+                    border: 0;
+                    outline: 0;
+                    border-radius: 5px;
+                    color: #fff;
+                    display: block;
+                }
+                .send-pass{
+                    width: 90%;
+                    color: #ddd;
+                    font: 16px almarai;
+                    padding: 15px;
+                    background: #222;
+                    text-align: center;
+                    border-radius: 5px;
+                    display: none;
+                    margin: 20px auto;
+                }
+            }
+            @media all and (max-width: 400px){
+                .log-in form .logo img{
+                    width: 100%;
+                    margin: 10px auto;
+                }
+                .log-in form input{
+                    padding: 10px;
+                    width: 100%;
+                    font: 18px cairo;
+                    margin:20px auto;
+                    background: #1b1a1a;
+                    border: 0;
+                    outline: 0;
+                    border-radius: 5px;
+                    color: #fff;
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="log-in">
+            <form method="post" action="Admin/dashbord.html">
+                <div class="logo">
+                    <img src="maktaba-logo.png">
+                </div>
+                <p> مرحبا بك ايها  المسؤول هل نسيت كلمة المرور نحن سنساعدك قم بكتابة بريدك الالكتروني هنا </p>
+                <input type="email" placeholder = "البريد الالكتروني" required />
+                <input type="submit" value = "تحقق" id ="btn"/>
+            </form>
+        </div>
+         <div class="send-pass">
+             <i class="fa fa-check"></i>
+             <span>تم الارسال بنجاح</span>
+             <p>سوف تتلقى كلمة المرور الجديدة على البريدالالكتروني الخاص بك</p>
+             <a href="admin.html">سجل الدخول الان</a>
+         </div>
+        <footer>
+            <p>جميع الحقوق محفوظة &copy; <a href="../Index.html"> المكتبة </a></p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script>
+            var dialogue = document.querySelector('div.send-pass'),
+                btn = document.querySelector('input#btn');
+            $(btn).click(function (){
+                $(dialogue).fadeIn(1000);
+            });
+        </script>
+    </body>
+</html>
