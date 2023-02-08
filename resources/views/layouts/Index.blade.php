@@ -1,5 +1,4 @@
-<!DOCTYPE Html>
-<html dir="rtl" lang="ar">
+<f=" dir="rtl" lang="ar">
 
 <head>
     <meta charset="UTF-8">
@@ -53,21 +52,21 @@
             </div>
             <div class="grid-nav">
                 <div>
-                    <li><a href="Index.html" class="logo"><img src="{{asset('dist/dashborad/maktaba-logo.png')}}" alt=""></a>
+                    <li><a href="{{route('user.home')}}" class="logo"><img src="{{asset('dist/dashborad/maktaba-logo.png')}}" alt=""></a>
                     </li>
                     <!--  -->
-                    <li><a href="Index.html" class="active"> <i class="fas fa-home"></i> الرئيسية </a></li>
+                    <li><a href="{{route('user.home')}}" class="active"> <i class="fas fa-home"></i> الرئيسية </a></li>
+                  <!--  -->
+                    <li><a href="{{route('user.aboutus')}}"> <i class="fas fa-user-alt"></i> من نحن </a></li>
                     <!--  -->
-                    <li><a href="about%20us.html"> <i class="fas fa-user-alt"></i> من نحن </a></li>
+                    <li><a href="{{route('Login.Login')}}"> <i class="fas fa-lock"></i> تسجيل الدخول </a></li>
                     <!--  -->
-                    <li><a href="log%20in.html"> <i class="fas fa-lock"></i> تسجيل الدخول </a></li>
-                    <!--  -->
-                    <li><a href="register.html"> <i class="fas fa-key"></i> الاشتراك </a></li>
+                    <li><a href="{{route('register.register')}}"> <i class="fas fa-key"></i> الاشتراك </a></li>
                     <!--  -->
                 </div>
-                <div><a href="log in.html" type="submit" class="jm-btn-grn log-out icon-btn"><i
-                            class="material-icons">exit_to_app</i>
-                        تسجيل الخروج </a></div>
+                <div> <a href="{{route('Login.Login')}}" type="submit" class="jm-btn-grn log-out icon-btn"><i class="material-icons">exit_to_app</i>
+                        تسجيل الخروج </a>
+                    </div>
             </div>
         </ul>
 
@@ -87,7 +86,7 @@
     <footer>
         <br>
         <div class="container">
-            <p class="text-center" class="animate__animated animate__bounce">جميع الحقوق محفوظة &copy; <a href="Index.html"><i class="fas fa-book-open"></i> المكتبة </a>
+            <p class="text-center" class="animate__animated animate__bounce">جميع الحقوق محفوظة &copy; <a href=""><i class="fas fa-book-open"></i> المكتبة </a>
             </p>
         </div>
     </footer>
@@ -104,5 +103,4 @@
     <script>
         AOS.init();
     </script>
-</body>
-</html>
+<f=">
