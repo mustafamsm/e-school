@@ -11,8 +11,5 @@ class dashboardController extends Controller
    {
     return view('Dashboard.index');
    }
-   public function page ()
-   {
-    return view('Dashboard.page');
-   }
+ 
 }

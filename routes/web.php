@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Dashboard\dashboardcontroller;
 use App\Http\Controllers\Dashboard\CategoriesController;
+use App\Http\Controllers\Dashboard\ClassroomController;
+use App\Http\Controllers\Dashboard\GradeController;
+use App\Http\Controllers\Dashboard\SectionController;
+use App\Models\Classroom;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,13 +44,21 @@ Route::get('/table-time',[UserController::class,'tabletime'])->name('tabletime')
 });
 
 Route::group([
+    'middleware'=>['auth'],
     'prefix'=> '/dashboard',
     'as'=>'dashboard.',
-    'namespace'=>'Dahboard'
+    
+    // 'namespace'=>'Dahboard'
     
     ], function () {
             //CRUD: CREATE, READ,UPDATE, DELETE.
-        Route::get('/',[dashboardController::class,'page']);
+    Route::get('/',[dashboardController::class,'index']);
+
+    Route::resource('/grades',GradeController::class);
+    Route::resource('/classrooms',ClassroomController::class);  
+    Route::resource('/sections',SectionController::class);
+    Route::get('/classes/{id}', [SectionController::class,'getclasses']);
+
     Route::prefix('/categories')->as('categories.')->group(function() {
         Route::get('/',[CategoriesController::class,'index'])
         ->name('index');
@@ -62,40 +74,43 @@ Route::group([
         ->name('destroy');
     });
     
+    
+
     });
 
 
 
-Route::group([
-'prefix'=> '/Login',
-'as'=>'Login.',
-'namespace'=>'Login'
-], function () {
-Route::get('/',[UserController::class,'Login'])->name('Login');
+// Route::group([
+// 'prefix'=> '/Login',
+// 'as'=>'Login.',
+// 'namespace'=>'Login'
+// ], function () {
+// Route::get('/',[UserController::class,'Login'])->name('Login');
 
-Route::get('/reset-pass',[UserController::class,'resetpass'])->name('resetpass');
+// Route::get('/reset-pass',[UserController::class,'resetpass'])->name('resetpass');
 
+// });
+
+
+// Route::group([
+// 'prefix'=> '/register',
+// 'as'=>'register.',
+// 'namespace'=>'register'
+// ], function () {
+// Route::get('/',[UserController::class,'register'])->name('register');
+
+// Route::get('/agree',[UserController::class,'agree'])->name('agree');
+
+// Route::get('/refuse',[UserController::class,'refuse'])->name('refuse');
+// });
+
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
-
-Route::group([
-'prefix'=> '/register',
-'as'=>'register.',
-'namespace'=>'register'
-], function () {
-Route::get('/',[UserController::class,'register'])->name('register');
-
-Route::get('/agree',[UserController::class,'agree'])->name('agree');
-
-Route::get('/refuse',[UserController::class,'refuse'])->name('refuse');
-});
-
-
-
-
-
-
-
+ 
+require __DIR__.'/auth.php';
 
 
 

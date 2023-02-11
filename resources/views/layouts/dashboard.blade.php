@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>@yield('title','laravel')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -167,15 +167,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+      @auth
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{asset('dist/Images/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
+          <div class="image">
+              <img src="{{ asset('dist/Images/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                  alt="User Image">
+          </div>
+          <div class="info">
+              <a href="" class="d-block">{{ Auth::user()->name }}</a>
+              <form action="{{route('logout')}}" method="post">
+                  @csrf
+                  <button type="submit" class="btn btn-sm btn-outline-primary">Logout</button>
+              </form>
+              
+          </div>
       </div>
+      
+      @endauth
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -194,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          {{-- <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -216,13 +224,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('dashboard.grades.index')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+                Grades|المراحل الدراسية
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('dashboard.classrooms.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                ClassRooms|الصفوف
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('dashboard.sections.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Sections|الاقسام
               </p>
             </a>
           </li>

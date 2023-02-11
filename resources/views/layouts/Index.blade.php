@@ -1,4 +1,4 @@
-<f=" dir="rtl" lang="ar">
+<html dir="rtl" lang="ar">
 
 <head>
     <meta charset="UTF-8">
@@ -51,22 +51,44 @@
                 </svg>
             </div>
             <div class="grid-nav">
+                @guest
                 <div>
-                    <li><a href="{{route('user.home')}}" class="logo"><img src="{{asset('dist/dashborad/maktaba-logo.png')}}" alt=""></a>
-                    </li>
-                    <!--  -->
-                    <li><a href="{{route('user.home')}}" class="active"> <i class="fas fa-home"></i> الرئيسية </a></li>
-                  <!--  -->
-                    <li><a href="{{route('user.aboutus')}}"> <i class="fas fa-user-alt"></i> من نحن </a></li>
-                    <!--  -->
-                    <li><a href="{{route('Login.Login')}}"> <i class="fas fa-lock"></i> تسجيل الدخول </a></li>
-                    <!--  -->
-                    <li><a href="{{route('register.register')}}"> <i class="fas fa-key"></i> الاشتراك </a></li>
-                    <!--  -->
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
                 </div>
-                <div> <a href="{{route('Login.Login')}}" type="submit" class="jm-btn-grn log-out icon-btn"><i class="material-icons">exit_to_app</i>
-                        تسجيل الخروج </a>
-                    </div>
+            @else
+                <div>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                    </li>
+                </div>
+                <div>
+
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="jm-btn-grn log-out icon-btn"><i
+                                class="material-icons">exit_to_app</i>
+                            تسجيل الخروج </button>
+
+                    </form>
+
+                </div>
+
+
+            @endguest
             </div>
         </ul>
 
@@ -103,4 +125,4 @@
     <script>
         AOS.init();
     </script>
-<f=">
+<html>
